@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beauty 4 U Salons | Hair · Beauty · Nails – Pelawatte, Battaramulla | Concept Demo</title>
+  <meta name="description" content="Beauty 4 U Salons – hair, beauty and nails in Pelawatte, Battaramulla. Be your own kind of beauty. Concept website demo.">
+  <!-- Demo only: stops Google from listing this page. REMOVE when the real site goes live. -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pink: #d81b6a;
+      --pink-dark: #b0124f;
+      --pink-soft: #fde7ef;
+      --black: #151515;
+      --grey: #6e6e6e;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; color: var(--black); background: #fff; }
+    .serif { font-family: 'Playfair Display', serif; }
+    .script { font-family: 'Great Vibes', cursive; font-weight: 400; }
+    section { padding: 100px 0; }
+    .muted { color: var(--grey); }
+    .text-pink { color: var(--pink) !important; }
+    .sec-title { font-family: 'Playfair Display'; font-weight: 800; font-size: clamp(2.4rem, 5.5vw, 3.8rem); line-height: 1.05; text-transform: uppercase; }
+    .sec-title .script { text-transform: none; color: var(--black); font-size: 1.15em; display: block; margin-top: -10px; }
+    .tag { display: inline-block; background: var(--pink-soft); color: var(--pink); font-weight: 600; font-size: .72rem; letter-spacing: 3px; text-transform: uppercase; padding: 6px 14px; border-radius: 50px; }
+
+    .demo-top { background: var(--black); color: #fff; text-align: center; font-size: .78rem; padding: 6px; }
+    .demo-top b { color: #ff7fb0; }
+
+    /* Nav */
+    .navbar { background: #fff; border-bottom: 1px solid #f1f1f1; }
+    .navbar-brand img { height: 46px; }
+    .navbar .nav-link { color: var(--black); font-weight: 600; font-size: .85rem; text-transform: uppercase; letter-spacing: 1px; }
+    .navbar .nav-link:hover { color: var(--pink); }
+
+    .btn-pink { background: var(--pink); color: #fff; border: 0; border-radius: 50px; padding: 14px 30px; font-weight: 600; letter-spacing: 1px; }
+    .btn-pink:hover { background: var(--pink-dark); color: #fff; }
+    .btn-black { background: var(--black); color: #fff; border-radius: 50px; padding: 14px 30px; font-weight: 600; letter-spacing: 1px; }
+    .btn-black:hover { background: #333; color: #fff; }
+
+    /* Hero */
+    .hero { padding: 70px 0 90px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; width: 620px; height: 620px; border-radius: 50%; background: var(--pink-soft); right: -180px; top: -120px; z-index: -1; }
+    .hero-logo { width: 100%; max-width: 520px; }
+    .hero-tagline { font-family: 'Playfair Display'; font-weight: 600; font-size: clamp(1.3rem, 2.6vw, 1.8rem); letter-spacing: 3px; text-transform: uppercase; }
+    .pills span { display: inline-block; border: 1px solid #e6e6e6; border-radius: 50px; padding: 8px 18px; margin: 0 6px 8px 0; font-weight: 600; font-size: .85rem; }
+    .pills span i { color: var(--pink); margin-right: 6px; }
+    .hero-photos { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px; gap: 14px; }
+    .ph { border-radius: 24px; background: linear-gradient(150deg, #f9c9da, #e46d9b); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; font-size: .8rem; text-align: center; }
+    .ph i { font-size: 2rem; margin-bottom: 6px; }
+    .ph.tall { grid-row: span 2; background: linear-gradient(160deg, #2a2a2a, #111); }
+    .ph.light { background: linear-gradient(150deg, #fde7ef, #f7bcd3); color: var(--pink-dark); }
+    .social-proof { display: inline-flex; align-items: center; gap: 12px; background: #fff; border: 1px solid #f0f0f0; border-radius: 50px; padding: 8px 18px 8px 8px; box-shadow: 0 8px 24px rgba(0,0,0,.05); }
+    .social-proof .fb { width: 38px; height: 38px; border-radius: 50%; background: #1877f2; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+
+    /* Marquee */
+    .ticker { background: var(--pink); color: #fff; overflow: hidden; white-space: nowrap; padding: 16px 0; }
+    .ticker-inner { display: inline-block; animation: tick 30s linear infinite; font-family: 'Playfair Display'; font-size: 1.5rem; }
+    .ticker-inner span { margin: 0 26px; }
+    @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* Service cards */
+    .svc { border-radius: 24px; padding: 36px 30px; height: 100%; background: #fafafa; transition: .3s; }
+    .svc:hover { background: var(--black); color: #fff; transform: translateY(-6px); }
+    .svc:hover .muted { color: #bbb; }
+    .svc .ico { width: 64px; height: 64px; border-radius: 18px; background: var(--pink); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.7rem; margin-bottom: 18px; }
+    .svc h3 { font-family: 'Playfair Display'; font-weight: 800; }
+    .svc ul { padding-left: 18px; margin: 14px 0 0; }
+
+    /* Pamper builder */
+    .builder { background: var(--pink-soft); }
+    .opt { display: flex; align-items: center; justify-content: space-between; background: #fff; border: 2px solid transparent; border-radius: 16px; padding: 16px 20px; margin-bottom: 12px; cursor: pointer; transition: .2s; user-select: none; }
+    .opt:hover { border-color: #f5b5cd; }
+    .opt.sel { border-color: var(--pink); box-shadow: 0 6px 18px rgba(216,27,106,.15); }
+    .opt .chk { width: 26px; height: 26px; border-radius: 50%; border: 2px solid #ddd; display: flex; align-items: center; justify-content: center; margin-right: 14px; color: #fff; font-size: .9rem; flex-shrink: 0; }
+    .opt.sel .chk { background: var(--pink); border-color: var(--pink); }
+    .opt .nm { font-weight: 600; }
+    .opt .pr { color: var(--pink); font-weight: 700; white-space: nowrap; }
+    .summary { background: var(--black); color: #fff; border-radius: 24px; padding: 34px; position: sticky; top: 100px; }
+    .summary .total { font-family: 'Playfair Display'; font-size: 2.6rem; font-weight: 800; color: #ff7fb0; }
+    .summary ul { list-style: none; padding: 0; min-height: 40px; }
+    .summary li { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #2c2c2c; font-size: .92rem; }
+
+    /* Gallery */
+    .insta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .insta div { aspect-ratio: 1/1; border-radius: 16px; background: linear-gradient(150deg, #fbe0ea, #f3a6c4); display: flex; align-items: center; justify-content: center; color: var(--pink-dark); font-size: 1.8rem; transition: .3s; }
+    .insta div:nth-child(even) { background: linear-gradient(150deg, #2a2a2a, #151515); color: #ff7fb0; }
+    .insta div:hover { transform: scale(.97); }
+
+    /* Reviews */
+    .review { border: 1px solid #eee; border-radius: 24px; padding: 30px; height: 100%; }
+    .review .stars { color: var(--pink); }
+
+    /* Contact */
+    .contact-box { background: var(--black); color: #fff; border-radius: 30px; overflow: hidden; }
+    .contact-box .muted { color: #aaa; }
+    .c-line { display: flex; gap: 14px; margin-bottom: 18px; }
+    .c-line i { color: #ff7fb0; font-size: 1.3rem; }
+    .c-line a { color: #fff; text-decoration: none; }
+    .contact-box iframe { width: 100%; height: 100%; min-height: 380px; border: 0; }
+
+    footer { padding: 30px 0; font-size: .85rem; color: var(--grey); }
+    footer img { height: 36px; }
+
+    .wa-float { position: fixed; right: 22px; bottom: 22px; width: 62px; height: 62px; border-radius: 50%; background: #25d366; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 2rem; z-index: 999; box-shadow: 0 10px 26px rgba(0,0,0,.25); }
+    .wa-float:hover { color: #fff; transform: scale(1.08); }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: .7s ease; }
+    .reveal.show { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <!-- DEMO NOTICE: remove after the owner approves -->
+  <div class="demo-top"><b>CONCEPT DEMO</b> prepared for Beauty 4 U Salons · prices, photos &amp; reviews are samples</div>
+
+  <!-- ===== NAV ===== -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home"><img src="logo.png" alt="Beauty for You"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pamper">Build Your Package</a></li>
+          <li class="nav-item"><a class="nav-link" href="#looks">Looks</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-pink btn-sm px-4" href="https://wa.me/94764474780?text=Hi%20Beauty%204%20U!%20I'd%20like%20to%20book%20an%20appointment." target="_blank"><i class="bi bi-whatsapp me-1"></i>Book</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="home">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal">
+          <img src="logo.png" alt="Beauty for You" class="hero-logo mb-4">
+          <div class="hero-tagline mb-4">Be your own <span class="text-pink">kind of beauty</span></div>
+          <div class="pills mb-4">
+            <span><i class="bi bi-scissors"></i>Hair</span>
+            <span><i class="bi bi-stars"></i>Beauty</span>
+            <span><i class="bi bi-brush"></i>Nails</span>
+          </div>
+          <div class="d-flex flex-wrap gap-3 mb-4">
+            <a href="https://wa.me/94764474780?text=Hi%20Beauty%204%20U!%20I'd%20like%20to%20book%20an%20appointment." target="_blank" class="btn btn-pink"><i class="bi bi-whatsapp me-2"></i>Book Your Next Appointment</a>
+            <a href="#pamper" class="btn btn-black">Build a Package</a>
+          </div>
+          <div class="social-proof">
+            <div class="fb"><i class="bi bi-facebook"></i></div>
+            <div><b>50K+</b> followers on Facebook<br><span class="muted small">Pelawatte, Battaramulla</span></div>
+          </div>
+        </div>
+        <div class="col-lg-6 reveal">
+          <div class="hero-photos">
+            <div class="ph tall"><i class="bi bi-camera"></i>Salon / stylist photo</div>
+            <div class="ph"><i class="bi bi-camera"></i>Hair look</div>
+            <div class="ph light"><i class="bi bi-camera"></i>Nail art</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== TICKER ===== -->
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span>Hair ✦</span><span>Colour ✦</span><span>Keratin ✦</span><span>Facials ✦</span><span>Makeup ✦</span><span>Nail Art ✦</span><span>Bridal ✦</span>
+      <span>Hair ✦</span><span>Colour ✦</span><span>Keratin ✦</span><span>Facials ✦</span><span>Makeup ✦</span><span>Nail Art ✦</span><span>Bridal ✦</span>
+    </div>
+  </div>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <span class="tag">What we do</span>
+        <h2 class="sec-title mt-3">Our Services <span class="script">made for you</span></h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 reveal">
+          <div class="svc"><div class="ico"><i class="bi bi-scissors"></i></div><h3>Hair</h3>
+            <p class="muted mb-0">Cuts, styling, colour and treatments that bring out your best.</p>
+            <ul class="muted small"><li>Cut &amp; blow-dry</li><li>Colour &amp; highlights</li><li>Keratin &amp; hair spa</li></ul>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="svc"><div class="ico"><i class="bi bi-stars"></i></div><h3>Beauty</h3>
+            <p class="muted mb-0">Glowing skin and flawless looks for every occasion.</p>
+            <ul class="muted small"><li>Facials &amp; clean-ups</li><li>Threading &amp; waxing</li><li>Party &amp; bridal makeup</li></ul>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="svc"><div class="ico"><i class="bi bi-brush"></i></div><h3>Nails</h3>
+            <p class="muted mb-0">Beautiful, long-lasting nails, from classic to creative.</p>
+            <ul class="muted small"><li>Manicure &amp; pedicure</li><li>Gel polish</li><li>Nail art &amp; extensions</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PAMPER PACKAGE BUILDER ===== -->
+  <section class="builder" id="pamper">
+    <div class="container">
+      <div class="mb-5 reveal">
+        <span class="tag" style="background:#fff">Interactive</span>
+        <h2 class="sec-title mt-3">Build Your <span class="script">pamper package</span></h2>
+        <p class="muted">Tap the services you want, see an estimated total, then send it to us on WhatsApp in one tap. <i>(Sample prices.)</i></p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-7 reveal" id="options"></div>
+        <div class="col-lg-5 reveal">
+          <div class="summary">
+            <div class="small text-uppercase" style="letter-spacing:3px;color:#aaa">Your package</div>
+            <ul id="picked" class="my-3"><li class="text-secondary">Nothing selected yet</li></ul>
+            <div class="small" style="color:#aaa">Estimated total</div>
+            <div class="total" id="total">Rs. 0</div>
+            <button class="btn btn-pink w-100 mt-3" onclick="sendPackage()"><i class="bi bi-whatsapp me-2"></i>Send to Beauty 4 U</button>
+            <p class="small mt-3 mb-0" style="color:#888">Final price confirmed by the salon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LOOKS / GALLERY ===== -->
+  <section id="looks">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-4 reveal">
+          <span class="tag">Latest looks</span>
+          <h2 class="sec-title mt-3">Fresh <span class="script">from the chair</span></h2>
+          <p class="muted">Your best Facebook &amp; Instagram photos go here, so new clients can see your work before they book.</p>
+          <a href="https://www.facebook.com/Beauty4USalons/" target="_blank" class="btn btn-black mt-2"><i class="bi bi-facebook me-2"></i>See more on Facebook</a>
+        </div>
+        <div class="col-lg-8 reveal">
+          <div class="insta">
+            <div><i class="bi bi-image"></i></div><div><i class="bi bi-image"></i></div><div><i class="bi bi-image"></i></div>
+            <div><i class="bi bi-image"></i></div><div><i class="bi bi-image"></i></div><div><i class="bi bi-image"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REVIEWS ===== -->
+  <section style="background:#fafafa">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <span class="tag">Happy clients</span>
+        <h2 class="sec-title mt-3">Kind <span class="script">words</span></h2>
+        <p class="muted">Real client reviews go here (with permission).</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4 reveal"><div class="review"><div class="stars mb-2">★★★★★</div><p class="muted">"Client review text goes here."</p><b>Client Name</b></div></div>
+        <div class="col-md-4 reveal"><div class="review"><div class="stars mb-2">★★★★★</div><p class="muted">"Client review text goes here."</p><b>Client Name</b></div></div>
+        <div class="col-md-4 reveal"><div class="review"><div class="stars mb-2">★★★★★</div><p class="muted">"Client review text goes here."</p><b>Client Name</b></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box reveal">
+        <div class="row g-0">
+          <div class="col-lg-5 p-5">
+            <span class="tag" style="background:#2a2a2a;color:#ff7fb0">Visit us</span>
+            <h2 class="sec-title mt-3" style="color:#fff">Come say <span class="script" style="color:#ff7fb0">hello</span></h2>
+            <div class="c-line mt-4"><i class="bi bi-geo-alt-fill"></i><div>728/B, Pannipitiya Road,<br>Pelawatte, Battaramulla 10120</div></div>
+            <div class="c-line"><i class="bi bi-telephone-fill"></i><a href="tel:+94764474780">+94 76 447 4780</a></div>
+            <div class="c-line"><i class="bi bi-envelope-fill"></i><a href="mailto:beauty4usalons@gmail.com">beauty4usalons@gmail.com</a></div>
+            <div class="c-line"><i class="bi bi-clock-fill"></i><div>Opening hours<br><span class="muted small">(to be confirmed by the salon)</span></div></div>
+            <div class="d-flex flex-wrap gap-3 mt-2">
+              <a href="https://wa.me/94764474780" target="_blank" class="btn btn-pink"><i class="bi bi-whatsapp me-2"></i>WhatsApp</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=728%2FB+Pannipitiya+Rd+Pelawatte+Battaramulla" target="_blank" class="btn btn-light rounded-pill px-4 fw-semibold">Directions</a>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <iframe src="https://maps.google.com/maps?q=728%2FB%20Pannipitiya%20Rd%2C%20Pelawatte%2C%20Battaramulla&z=15&output=embed" loading="lazy" title="Map to Beauty 4 U Salons"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <img src="logo.png" alt="Beauty for You">
+      <span>&copy; <span id="yr"></span> Beauty 4 U Salons · Pelawatte, Battaramulla</span>
+      <span>Website by Lowamina Pigera</span>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/94764474780" target="_blank" class="wa-float" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    const WHATSAPP = '94764474780';
+
+    // ---- Pamper package builder (SAMPLE prices – replace with the salon's real prices) ----
+    const services = [
+      { cat: 'Hair',   name: 'Haircut & Blow-dry', price: 2000 },
+      { cat: 'Hair',   name: 'Hair Colour',        price: 5500 },
+      { cat: 'Hair',   name: 'Keratin Treatment',  price: 14000 },
+      { cat: 'Hair',   name: 'Hair Spa',           price: 3500 },
+      { cat: 'Beauty', name: 'Facial',             price: 4000 },
+      { cat: 'Beauty', name: 'Eyebrow Threading',  price: 500 },
+      { cat: 'Beauty', name: 'Party Makeup',       price: 6000 },
+      { cat: 'Nails',  name: 'Manicure',           price: 2500 },
+      { cat: 'Nails',  name: 'Pedicure',           price: 3000 },
+      { cat: 'Nails',  name: 'Gel Polish',         price: 3500 }
+    ];
+    const picked = new Set();
+    const rs = n => 'Rs. ' + n.toLocaleString('en-LK');
+
+    const box = document.getElementById('options');
+    let lastCat = '';
+    services.forEach((s, i) => {
+      if (s.cat !== lastCat) {
+        box.insertAdjacentHTML('beforeend', `<h5 class="serif fw-bold mt-3 mb-3">${s.cat}</h5>`);
+        lastCat = s.cat;
+      }
+      box.insertAdjacentHTML('beforeend',
+        `<div class="opt" data-i="${i}">
+           <div class="d-flex align-items-center"><span class="chk"><i class="bi bi-check-lg"></i></span><span class="nm">${s.name}</span></div>
+           <span class="pr">${rs(s.price)}</span>
+         </div>`);
+    });
+
+    box.addEventListener('click', e => {
+      const opt = e.target.closest('.opt');
+      if (!opt) return;
+      const i = +opt.dataset.i;
+      picked.has(i) ? picked.delete(i) : picked.add(i);
+      opt.classList.toggle('sel');
+      renderSummary();
+    });
+
+    function renderSummary() {
+      const list = document.getElementById('picked');
+      if (!picked.size) {
+        list.innerHTML = '<li class="text-secondary">Nothing selected yet</li>';
+        document.getElementById('total').textContent = rs(0);
+        return;
+      }
+      let total = 0;
+      list.innerHTML = [...picked].map(i => {
+        total += services[i].price;
+        return `<li><span>${services[i].name}</span><span>${rs(services[i].price)}</span></li>`;
+      }).join('');
+      document.getElementById('total').textContent = rs(total);
+    }
+
+    function sendPackage() {
+      if (!picked.size) { alertBox(); return; }
+      let total = 0;
+      const lines = [...picked].map(i => { total += services[i].price; return `• ${services[i].name}`; });
+      const msg = `Hi Beauty 4 U! I'd like to book this package:\n${lines.join('\n')}\nEstimated total: ${rs(total)}\nPlease let me know available times. Thank you!`;
+      window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+    function alertBox() {
+      const list = document.getElementById('picked');
+      list.innerHTML = '<li style="color:#ff7fb0">Please tap at least one service first.</li>';
+    }
+
+    // Reveal on scroll
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
+    }), { threshold: .1 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
